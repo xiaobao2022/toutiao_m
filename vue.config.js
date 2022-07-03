@@ -7,5 +7,11 @@ module.exports = defineConfig({
       port: 25000,
       host: 'localhost'
     }
+  },
+  chainWebpack: (config) => {
+    config.plugin('html').tap((args) => {
+      args[0].title = '黑马头条'
+      return args
+    })
   }
 })
